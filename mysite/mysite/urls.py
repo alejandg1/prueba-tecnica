@@ -16,7 +16,13 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from .views import CategoryListView, CategoryCreateView, CategoryUpdateView, CategoryDeleteView
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('project/<int:project_id>/categories/', CategoryListView.as_view(), name='list_categories'),
+    path('project/<int:project_id>/categories/create/', CategoryCreateView.as_view(), name='create_category'),
+    path('project/<int:project_id>/categories/<int:category_id>/update/', CategoryUpdateView.as_view(), name='update_category'),
+    path('project/<int:project_id>/categories/<int:category_id>/delete/', CategoryDeleteView.as_view(), name='delete_category'),
 ]
