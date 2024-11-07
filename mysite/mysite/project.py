@@ -4,7 +4,7 @@ from .models import Project
 
 class ProjectListView(ListView):
     model = Project
-    template_name = 'project_list.html'
+    template_name = 'project.html'
     context_object_name = 'projects'
 
 class ProjectCreateView(CreateView):
@@ -21,5 +21,5 @@ class ProjectUpdateView(UpdateView):
 
 class ProjectDeleteView(DeleteView):
     model = Project
-    template_name = 'project_confirm_delete.html'
+    template_name = 'project_delete.html'
     success_url = reverse_lazy('project_list')

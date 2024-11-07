@@ -6,7 +6,7 @@ from .forms import CategoryForm
 
 class CategoryListView(ListView):
     model = Category
-    template_name = 'mysite/list_categories.html'
+    template_name = 'list_categories.html'
     context_object_name = 'categories'
 
     def get_queryset(self):
@@ -23,7 +23,7 @@ class CategoryListView(ListView):
 class CategoryCreateView(CreateView):
     model = Category
     form_class = CategoryForm
-    template_name = 'mysite/category.html'
+    template_name = 'category.html'
 
     def form_valid(self, form):
         project = get_object_or_404(Project, id=self.kwargs['project_id'])
@@ -42,7 +42,7 @@ class CategoryCreateView(CreateView):
 class CategoryUpdateView(UpdateView):
     model = Category
     form_class = CategoryForm
-    template_name = 'mysite/update_category.html'
+    template_name = 'update_category.html'
 
     def get_object(self, queryset=None):
         project = get_object_or_404(Project, id=self.kwargs['project_id'])
@@ -59,7 +59,7 @@ class CategoryUpdateView(UpdateView):
 
 class CategoryDeleteView(DeleteView):
     model = Category
-    template_name = 'mysite/delete_category.html'
+    template_name = 'delete_category.html'
 
     def get_object(self, queryset=None):
         project = get_object_or_404(Project, id=self.kwargs['project_id'])
