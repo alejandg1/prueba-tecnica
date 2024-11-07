@@ -1,0 +1,18 @@
+<!-- lista_tareas.html -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Tareas en {{ categoria.nombre }}</title>
+</head>
+<body>
+    <h1>Tareas en {{ categoria.nombre }}</h1>
+    <ul>
+        {% for tarea in categoria.tareas.all %}
+            <li>{{ tarea.nombre }} - {{ tarea.descripcion }}</li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'category' categoria.proyecto.id %}">Volver a Categorías</a>
+    <a href="{% url 'crear_tarea' %}">Crear Nueva Tarea</a>
+</body>
+</html>
