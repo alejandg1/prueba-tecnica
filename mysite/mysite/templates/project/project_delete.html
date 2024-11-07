@@ -1,0 +1,17 @@
+<!-- project_delete.html -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Eliminar Proyecto</title>
+</head>
+<body>
+    <h1>Eliminar Proyecto</h1>
+    <p>¿Estás seguro de que deseas eliminar este proyecto? Esta acción no se puede deshacer y eliminará todas las categorías y datos relacionados con el proyecto.</p>
+    <form method="post">
+        {% csrf_token %}
+        <button type="submit">Eliminar</button>
+    </form>
+    <a href="{% url 'lista_proyectos' %}">Cancelar</a>
+</body>
+</html>
